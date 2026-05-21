@@ -1,57 +1,71 @@
-class Cuenta:
+class cuenta:
+   """
+   Presetacion de una cuenta bancaria
+  
+   Atributos:
+       cliente: nombre del cliente.
+       cuenta: numero de cuenta.
+       saldo: saldo actual de la cuenta."""
 
-    def __init__(self, cliente, cuenta, saldo):
-        """
-        Inicializa una nueva instancia de la clase Cuenta.
 
-        Args:
-            cliente (str): El nombre del dueño de la cuenta.
-            cuenta (str): El número de cuenta.
-            saldo (float): El saldo inicial de la cuenta.
-        """
-        self.cliente = cliente
-        self.cuenta = cuenta
-        self.saldo = saldo
-    
-    def deposito(self, cantidad):
-        """
-        Suma una cantidad de dinero al saldo actual si la cantidad es positiva.
+  
+   def __init__(self, cliente, cuenta, saldo = 0):
+       """
+       Inicializa una nueva cuenta bancaria.
+      
+       Args:
+           cliente: nombre del cliente.
+           cuenta: numero de cuenta.
+           saldo: saldo inicial de la cuenta. (por defecto 0)
+       """
+       self.cliente = cliente
+       self.cuenta = cuenta
+       self.saldo = saldo
 
-        Args:
-            cantidad (float): Monto a depositar.
 
-        Returns:
-            bool: True si el depósito fue exitoso, False en caso contrario.
-        """
-        if cantidad > 0:
-            self.saldo += cantidad
-            return True
-        return False
-    
-    def retirar(self, cantidad):
-        """
-        Resta una cantidad de dinero al saldo actual si hay fondos suficientes.
+   def deposito(self, cantidad):
+       """
+       Realiza un deposito en la cuenta.
 
-        Args:
-            cantidad (float): Monto a retirar.
 
-        Returns:
-            bool: True si el retiro se pudo realizar, False si no hay saldo o es inválido.
-        """
-        if 0 < cantidad <= self.saldo:
-            self.saldo -= cantidad
-            return True
-        return False
-    
+       Args:
+           cantidad:(float) ingresa la cantidad a depositar. Debe ser un valor positivo.
+
+
+       Returns:
+           bool:True si el deposito fue exitoso.
+           bool:False si la cantidad es negativa.
+
+
+       """
+       if cantidad > 0:
+           self.saldo += cantidad
+           return True
+       return False
+  
+   def retiro(self,cantidad):
+       """
+       Realiza un retiro de la cuenta.
+      
+       Args:
+           cantidad:(float) ingresa la cantidad a retirar
+      
+       Returns:
+           bool:True si el retiro fue exitoso.
+           bool:false si el saldo es isuficiente o si la cantidad es cero.
+       """
+       if cantidad > 0 and cantidad <= self.saldo:
+           self.saldo -= cantidad
+           return True
+       return False
+  
 def main():
-    
-    # Creación de objeto
-    mi_cuenta = Cuenta("Ana Pérez", "123456-78", 1000.0)
-    
-    print(f"Bienvenido/a {mi_cuenta.cliente}")
-    print(f"Saldo actual: ${mi_cuenta.saldo}")
+   pass
+
 
 if __name__ == "__main__":
-    # El bloque if __name__ == "__main__": asegura que main() solo se ejecute 
-    # si el archivo se lanza directamente, y no si se importa como módulo.
-    main()
+   main()
+
+
+
+
