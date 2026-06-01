@@ -1,5 +1,5 @@
 from banco import Banco
-from cuenta import cuenta
+from cuenta import Cuenta
 
 def main():
     def menu():

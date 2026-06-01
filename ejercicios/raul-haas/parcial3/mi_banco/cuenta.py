@@ -1,11 +1,11 @@
-class cuenta:
+class Cuenta:
    """
    Presetacion de una cuenta bancaria
   
-   Atributos:
-       cliente: nombre del cliente.
-       cuenta: numero de cuenta.
-       saldo: saldo actual de la cuenta."""
+   Args:
+       cliente (str): nombre del cliente.
+       cuenta (str): numero de cuenta.
+       saldo (float): saldo actual de la cuenta."""
 
 
   
@@ -14,9 +14,9 @@ class cuenta:
        Inicializa una nueva cuenta bancaria.
       
        Args:
-           cliente: nombre del cliente.
-           cuenta: numero de cuenta.
-           saldo: saldo inicial de la cuenta. (por defecto 0)
+           cliente (str): nombre del cliente.
+           cuenta (str): numero de cuenta.
+           saldo (float): saldo inicial de la cuenta. (por defecto 0)
        """
        self.cliente = cliente
        self.cuenta = cuenta
@@ -29,12 +29,12 @@ class cuenta:
 
 
        Args:
-           cantidad:(float) ingresa la cantidad a depositar. Debe ser un valor positivo.
+           cantidad (float): ingresa la cantidad a depositar. Debe ser un valor positivo.
 
 
        Returns:
-           bool:True si el deposito fue exitoso.
-           bool:False si la cantidad es negativa.
+           bool: True si el deposito fue exitoso.
+           bool: False si la cantidad es negativa.
 
 
        """

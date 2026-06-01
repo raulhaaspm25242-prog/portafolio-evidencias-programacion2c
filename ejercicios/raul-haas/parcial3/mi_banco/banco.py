@@ -1,4 +1,4 @@
-from cuenta import cuenta
+from cuenta import Cuenta
     
 class Banco:
     def transferir(self, origen, destino, cantidad):
